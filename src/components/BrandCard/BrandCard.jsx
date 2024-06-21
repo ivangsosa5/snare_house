@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import './BrandCard.css'
+
+
 export default function BrandCard({imgSrc, title, description, brand}) {
     return (
       <div className="bg-white">
