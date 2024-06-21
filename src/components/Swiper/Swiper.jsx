@@ -17,7 +17,6 @@ import BrandCard from '../BrandCard/BrandCard';
 import DW0 from '../../assets/img/slidersImg/DW0.jpg'
 import Ludwig0 from '../../assets/img/slidersImg/Ludwig0.jpg'
 import Tama0 from '../../assets/img/slidersImg/Tama0.jpg'
-import Pearl0 from '../../assets/img/slidersImg/Pearl0.jpg'
 import Sonor0 from '../../assets/img/slidersImg/Sonor0.jpg'
 
 export default function Slider() {

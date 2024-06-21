@@ -1,4 +1,4 @@
-import { Fragment, useContext, useState } from 'react'; 
+import { Fragment, useContext, useEffect, useState, useRef } from 'react'; 
 import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import {ShoppingBagIcon} from '@heroicons/react/24/outline';
@@ -6,36 +6,26 @@ import { Link } from 'react-router-dom';
 import { cartContext } from '../../context/cartContext';
 
 
-const products = [
-  {
-    id: 1,
-    name: 'Throwback Hip Bag',
-    href: '#',
-    color: 'Salmon',
-    price: '$90.00',
-    quantity: 1,
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
-    imageAlt: 'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-  },
-  {
-    id: 2,
-    name: 'Medium Stuff Satchel',
-    href: '#',
-    color: 'Blue',
-    price: '$32.00',
-    quantity: 1,
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg',
-    imageAlt:
-      'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
-  },
-  // More products...
-]
-
 export default function OffCanvasCart() {
 
-  const {cartList, removeItem , subTotal, cartCount}= useContext(cartContext)
+  const {cartList, removeItem , subTotal, cartCount, clearItems}= useContext(cartContext)
+
+  const isMounted = useRef(false)
 
   const [open, setOpen] = useState(false)
+
+  useEffect(()=>{
+    if(!isMounted.current){
+        const timeOutId = setTimeout(()=>{
+           isMounted.current = true
+        },6000)  
+        return()=>clearTimeout(timeOutId)
+    }else{
+        setOpen(true)
+    }
+  },[cartList])
+
+  
 
   return (
     <>  
@@ -132,6 +122,15 @@ export default function OffCanvasCart() {
                                 ))}
                             </ul>
                             </div>
+                            {/* <div className="flex">
+                                <button
+                                    onClick={()=>clearItems()}
+                                    type="button"
+                                    className="font-medium text-gray-800 hover:text-gray-500 text-sm"
+                                >
+                                    Clear Cart
+                                </button>
+                            </div> */}
                         </div>
                         </div>
 
@@ -144,7 +143,7 @@ export default function OffCanvasCart() {
                         <div className="mt-6">
                             <Link
                             to="/checkout"
-                            className="flex items-center justify-center rounded-md border border-transparent bg-gray-800 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-900"
+                            className="flex items-center justify-center rounded-full border border-transparent bg-gray-800 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-900"
                             onClick={() => setOpen(false)}
                             >
                             Checkout

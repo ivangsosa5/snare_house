@@ -4,10 +4,31 @@ export const cartContext = createContext()
 
 export function CartProvider({children}){
 
-    const [cartList, setCartList] = useState([]);
-    const [cartCount, setCartCount] = useState(0)
-    const [subTotal, setSubTotal] = useState(0)
+    const [cartList, setCartList] = useState(()=>{
+        const cartFromStorage = window.localStorage.getItem('cartStorage')
+        return cartFromStorage ? JSON.parse(cartFromStorage) : []
+    });
+    const [cartCount, setCartCount] = useState(()=>{
+        const counterFromStorage = window.localStorage.getItem('counterStorage')
+        return counterFromStorage ? JSON.parse(counterFromStorage) : 0
+    })
+    const [subTotal, setSubTotal] = useState(()=> {
+        const totalFromStorage = localStorage.getItem('totalStorage')
+        return totalFromStorage ? JSON.parse(totalFromStorage) : 0
+    })
 
+
+    const saveCart = (prop) => {
+        localStorage.setItem('cartStorage', JSON.stringify(prop))
+    }
+
+    const saveCounter = (prop) => {
+        localStorage.setItem('counterStorage', JSON.stringify(prop))
+    }
+
+    const saveTotal = (prop) => {
+        localStorage.setItem('totalStorage', JSON.stringify(prop))
+    }
 
     const isInCartIndex = (id)=>{
         return cartList.findIndex(item=>item.id === id)
@@ -28,11 +49,20 @@ export function CartProvider({children}){
                 setCartList(newCart)
                 setCartCount(cartCount + quantity)
                 setSubTotal(subTotal + price)
+                saveCart(newCart)
+                saveCounter(cartCount + quantity)
+                saveTotal(subTotal + price)
                 
                 }else{
-                    setCartList(prevState=>([...prevState, {id, name, price, quantity, pictureUrl, color, colorName}]))
+                    const newCart = structuredClone(cartList)
+                    newCart.push({id: id, name: name, price: price, quantity: quantity, pictureUrl: pictureUrl, color: color, colorName: colorName})
+                    // setCartList(prevState=>([...prevState, {id, name, price, quantity, pictureUrl, color, colorName}]))
+                    setCartList(newCart)
                     setCartCount(cartCount + quantity)
                     setSubTotal(subTotal + price)
+                    saveCart(newCart)
+                    saveCounter(cartCount + quantity)
+                    saveTotal(subTotal + price)
                 }
 
         }
@@ -43,6 +73,9 @@ export function CartProvider({children}){
             setCartList(cartListFiltered)
             setCartCount(cartCount - quantity)
             setSubTotal(subTotal - price*quantity)
+            saveCart(cartListFiltered)
+            saveCounter(cartCount - quantity)
+            saveTotal(subTotal - price*quantity)
     
         }
     
@@ -50,6 +83,7 @@ export function CartProvider({children}){
             setCartList([])
             setCartCount(0)
             setSubTotal(0)
+            localStorage.clear()
         }
 
     return (

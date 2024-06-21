@@ -2,7 +2,6 @@ import React from "react"
 import Slider from "../Swiper/Swiper"
 import './HomePage.css'
 import { Link } from "react-router-dom"
-import back from '../../assets/back.png'
 
 const HomePage = ()=>{
 

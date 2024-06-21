@@ -13,7 +13,7 @@ export default function Filters(){
 
     const {setSortBy, setFilter, filter} = useFilters()
 
-   console.log(filter)
+
     return(
         <div>
                 <Menu as="div" className="relative inline-block text-left">

@@ -7,6 +7,7 @@ import { Footer } from '../Footer/Footer'
 import { Header } from '../Header/Header'
 import { HomePage } from '../HomePage/HomePage'
 import { CheckOut } from '../CheckOut/CheckOut'
+import ScrollTop from '../ScrollTop/ScrollTop'
 
 
 
@@ -16,6 +17,7 @@ const Routing = () => {
     <div>
         <BrowserRouter>
             <Header/>
+            <ScrollTop/>
             <Routes>
                 <Route path='/' element= {<HomePage/>}/>
                 <Route path='/home' element={<HomePage/>}/>
