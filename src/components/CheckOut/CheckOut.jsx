@@ -1,7 +1,7 @@
 import { useContext } from 'react'; 
 import { Link } from 'react-router-dom';
 import { cartContext } from '../../context/cartContext';
-import { Dialog } from '@headlessui/react';
+
 
 const CheckOut = () => {
 
@@ -9,13 +9,13 @@ const CheckOut = () => {
 
   return (
     <>  
-        <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl pt-24 px-16 ">
-            <div className="flex items-start justify-between py-8 px-4 sm:px-6">
+        <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl pt-28 px-4 sm:px-16 ">
+            <div className="py-6 ">
                  <h1 className="text-4xl font-medium text-gray-900">SHOPPING CART</h1>
             </div>
             <div className='lg:grid sm:grid-cols-3 gap-6 mb-6'>
                 
-                <div className="col-span-2 border border-gray-200 rounded-lg flex-1 overflow-y-auto px-4 pb-8 sm:px-6 ">
+                <div className="col-span-2 border border-gray-200 rounded-lg flex-1 overflow-y-auto px-4 pb-8 sm:px-6 mb-4 sm:mb-0">
                     <div className='text-2xl font-medium text-gray-900 mt-8'>
                         <p>ITEMS</p>
                     </div>

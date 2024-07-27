@@ -18,7 +18,7 @@ export default function Filters(){
         <div>
                 <Menu as="div" className="relative inline-block text-left">
                             <div>
-                                <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 bg-white px-3 py-2 text-base  text-gray-900 ">
+                                <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 bg-white px-1 sm:px-3 py-2 text-base  text-gray-900 ">
                                 Sort by
                                 <ChevronDownIcon className=" h-6 w-6 text-gray-400" aria-hidden="true" />
                                 </Menu.Button>
@@ -92,10 +92,10 @@ export default function Filters(){
                                 </div>
                                 </Menu.Items>
                             </Transition>
-                        </Menu>
-                        <Menu as="div" className="relative inline-block text-left">
+                </Menu>
+                <Menu as="div" className="relative inline-block text-left">
                             <div>
-                                <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 bg-white px-3 py-2 text-base  text-gray-900 ">
+                                <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 bg-white px-1 sm:px-3 py-2 text-base  text-gray-900 ">
                                 Filter
                                 <ChevronDownIcon className=" h-6 w-6 text-gray-400" aria-hidden="true" />
                                 </Menu.Button>
@@ -154,7 +154,7 @@ export default function Filters(){
                                 </div>
                                 </Menu.Items>
                             </Transition>
-                        </Menu>
+                </Menu>
         </div>
     )
 }

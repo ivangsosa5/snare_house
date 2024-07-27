@@ -14,8 +14,8 @@ import 'swiper/css/pagination';
 import { EffectCreative, Navigation, A11y } from 'swiper/modules';
 
 import BrandCard from '../BrandCard/BrandCard';
-import DW0 from '../../assets/img/slidersImg/DW0.jpg'
-import Ludwig0 from '../../assets/img/slidersImg/Ludwig0.jpg'
+import DW0 from '../../assets/img/slidersImg/DW0.png'
+import Ludwig0 from '../../assets/img/slidersImg/Ludwig0.png'
 import Tama0 from '../../assets/img/slidersImg/Tama0.jpg'
 import Sonor0 from '../../assets/img/slidersImg/Sonor0.jpg'
 

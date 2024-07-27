@@ -240,7 +240,7 @@ export default function NavBar() {
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full"
             >
-              <Dialog.Panel className="relative flex w-full max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl">
+              <Dialog.Panel className="relative flex w-full max-w-sm flex-col overflow-y-auto bg-white pb-12 shadow-xl">
                 <div className="flex px-4 pb-2 pt-5">
                   <button
                     type="button"
@@ -326,7 +326,7 @@ export default function NavBar() {
 
       <header className="top-8 fixed z-20 bg-white shadow-md w-full">
         <div className='absolute w-full inset-0'>
-          <div className='relative flex justify-center items-center text-4xl text-gray-800 font-semibold h-20'>
+          <div className='relative flex justify-center items-center text-3xl sm:text-4xl  text-gray-800 font-semibold h-20'>
             {/* <p className='absolute blur-[5px] opacity-40'>SNARE HOUSE</p>
             <p className='absolute blur-[20px] opacity-90'>SNARE HOUSE</p> */}
             <Link to={'/home'} className='relative' >SNARE HOUSE
@@ -350,7 +350,7 @@ export default function NavBar() {
               </button>
 
               {/* Logo */}
-              <div className="ml-4 flex lg:ml-0 z-40">
+              <div className="ml-4 sm:flex lg:ml-0 z-40 hidden">
                 <Link to={'/home'}>
                   <span className="sr-only">Your Company</span>
                   <img

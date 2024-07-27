@@ -3,41 +3,36 @@ import { Link } from "react-router-dom";
 
 export default function BrandCard({imgSrc, title, description, brand}) {
     return (
-      <div className="bg-white">
-        <div className='mx-auto sm:py-0'>
-          <div className="relative overflow-hidden px-6 pt-16 md:flex md:gap-x-20 md:px-24 md:pt-0 h-[545px]">
+      <div className="bg-white overflow-hidden mx-auto">
+          <div className="mx-auto relative pt-52 grid grid-cols-1 lg:grid-cols-2 md:gap-x-20 md:px-24 md:pt-0 lg:h-[545px]">
             
-            <div className="mx-auto max-w-md text-center pb-6 md:mx-0 md:flex-auto md:py-[123px] md:text-left relative">
-              <p className="z-10 text-sm font-medium text-slate-900">{brand}</p>            
-              <h2 className="animate-fade-left animate-once text-3xl font-bold tracking-tight text-gray-800 sm:text-5xl">
+            <div className="pb-40 mx-10 px-12 md:px-0 md:max-w-md text-center md:mx-0 md:flex-auto md:py-[123px] md:text-left ">
+              <p className="text-lg font-medium text-[rgb(121,98,63)]">{brand}</p>            
+              <h2 className="animate-fade-left animate-once text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl">
               {title}
               </h2>
-              <p className="animate-fade-left animate-once mt-6 text-lg leading-8 text-gray-700">
+              <p className="animate-fade-left animate-once mt-6 text-lg leading-8 text-gray-700 hidden md:block ">
               {description}
               </p>
               
               <div className="mt-10 flex items-center justify-center gap-x-6 md:justify-start">
                 <Link
                   to={`/${brand}`}
-                  className="rounded-full bg-transparent border border-gray-900 px-3.5 py-2.5 text-sm font-semibold text-gray-800 hover:bg-gray-800 hover:text-white "
+                  className="rounded-full bg-transparent border-[1.5px] border-gray-900 px-3.5 py-2.5 text-sm font-semibold text-gray-800 hover:bg-gray-800 hover:text-white "
                 >
-                  SHOP NOW!
+                  SHOP COLLECTION!
                 </Link>
-                {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-800">
-                  Learn more <span aria-hidden="true">→</span>
-                </a> */}
               </div>
             </div>
-            <div className="relative contrast-75 ">
+            <div className="relative contrast-75 ml-3 md:ml-0">
               <img
-                className=" absolute left-0 top-0 h-[545px] max-w-none bg-white/5"
+                className="lg:absolute left-0 top-0 md:h-[545px] md:w-auto md:max-w-none bg-white/5 md:rounded-2xl lg:rounded-none"
                 src={imgSrc}
                 alt="App screenshot"
               />
                
             </div>
           </div>
-        </div>
       </div>
     )
   }

@@ -5,6 +5,12 @@
   
 }
 
+@media (max-width: 1024px){
+  .swiper{
+    height: auto;
+  }
+}
+
 .swiper-slide {
   align-items: center;
   justify-content: center;

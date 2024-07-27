@@ -29,7 +29,7 @@ export default function OffCanvasCart() {
 
   return (
     <>  
-        <button onClick={()=>setOpen(true)} className="group -m-2 flex items-center p-2">
+        <button onClick={()=>setOpen(true)} className="group -m-2 flex p-2 justify-center items-end">
             <ShoppingBagIcon
                 className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                 aria-hidden="true"

@@ -46,7 +46,7 @@ import { useFilters } from '../../hooks/useFilters'
       return (
         
         <div className="bg-white">
-          <div className="mx-auto max-w-2xl py-4 lg:py-28 sm:py-24 lg:max-w-full ">
+          <div className="mx-auto max-w-2xl py-28 lg:max-w-full ">
             
             <div className="grid grid-cols-1 gap-x-1 gap-y-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:gap-x-1">
               {typeof productos !== 'string'? productos.map((product) => (
